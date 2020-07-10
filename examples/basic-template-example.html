@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Template Example</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+	<style>
+		body {
+			font-family: sans-serif;
+			padding: 1em;
+			color: #333;
+		}
+
+		h1 {
+			font-size: 1em;
+			padding-bottom: 0.5em;
+			border-bottom: 1px solid;
+			margin-bottom: 1em;
+			text-align: center;
+		}
+
+		h1 span {
+			font-size: 1.5em;
+		}
+
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.col {
+			width: 25%;
+		}
+
+		a {
+			text-decoration: none;
+			color: #666
+		}
+
+		.bp a {
+			display: block;
+		}
+
+		.bp {
+			margin-bottom: 100%;
+			position: relative;
+		}
+
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			object-fit: cover;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>
+		<span>Basic Template Example</span>
+		<span><a href="./extended-template-example.html">></a></span>
+	</h1>
+
+	<!-- container to display template -->
+	<div id="insta-grid" class="row"></div>
+
+
+	<!-- template -->
+	<script type="text/template"
+		id="template-instajax-item"
+		data-instajax-container-id="insta-grid"
+		data-instajax-handle="inmediaibiza"
+		data-instajax-show-images="4">
+		<div class="col">
+			<div class="bp">
+				<a href="{{href}}" target="_blank" rel="noopener noreferrer">
+					<img src="{{src}}" alt="Instagram Photo {{index1}}">
+				</a>
+			</div>
+		</div>
+	</script>
+
+
+	<!-- hack to clear storage for demo -->
+	<script>window.localStorage.setItem('instajaxTS', '');</script>
+
+
+	<!-- include instajax -->
+	<script src="../src/instajax.js"></script>
+</body>
+</html>
